@@ -42,8 +42,9 @@ public class Main {
             System.out.println("2. Reverse content of the first file into the second file");
             System.out.println("3. Replace a word in the first file");
             System.out.println("4. Compare content of the first and second files");
-            System.out.println("5. Convert the first file data into byte codes and save in another file");
-            System.out.println("6. Exit");
+            System.out.println("5. Compare content of the first and third files");
+            System.out.println("6. Convert the first file data into byte codes and save in another file");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -52,24 +53,22 @@ public class Main {
                 case 1:
                     fileService.displayFileContent(fileName1);
                     break;
-
                 case 2:
                     fileService.reverseFileContent(fileName1, fileName2);
                     break;
-
                 case 3:
                     fileService.replaceWordInFile(scanner, fileName1);
                     break;
-
                 case 4:
                     fileService.compareFiles(fileName1, fileName2);
                     break;
-
                 case 5:
+                    fileService.compareFiles(fileName1, fileName3);
+                    break;
+                case 6:
                     fileService.convertFileToBytes(fileName1, fileName4);
                     break;
-
-                case 6:
+                case 7:
                     exit = true;
                     break;
 

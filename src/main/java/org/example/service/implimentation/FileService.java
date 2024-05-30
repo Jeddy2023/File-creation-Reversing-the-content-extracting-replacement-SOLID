@@ -56,13 +56,15 @@ public class FileService {
         }
     }
 
-    public void compareFiles(String fileName1, String fileName2) {
+    public boolean compareFiles(String fileName1, String fileName2) {
         try {
             boolean isSame = fileComparator.compareFiles(fileName1, fileName2);
             System.out.println("Are both files the same? " + isSame);
+            return isSame;
         } catch (IOException e) {
             System.out.println("An error occurred while comparing the files.");
             e.printStackTrace();
+            return false;
         }
     }
 
